@@ -27,7 +27,7 @@ function Header() {
                 <ViewVerticalIcon className="h-4 w-4" />
                 </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="inset-y-0 flex h-auto w-[600px] flex-col p-10">
+            <SheetContent side="left" className="inset-y-0 flex h-auto w-5/6 md:w-2/3 lg:w-1/3 flex-col p-10">
                 <SheetHeader className="flex">
                 <SheetTitle>Chat History</SheetTitle>
                 <SheetDescription>
@@ -55,7 +55,8 @@ function Header() {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline">Edit Context</Button>
+            {/* STRETCH GOAL ADD EDIT CONTEXT */}
+            {/* <Button variant="outline">Edit Context</Button> */}
         </div>
         </header>
     )
