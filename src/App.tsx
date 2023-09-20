@@ -1,58 +1,68 @@
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
+import { ViewVerticalIcon } from "@radix-ui/react-icons"
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 function App() {
+  const chatHistory = [
+    {id: 1, label: "How to use the app"},
+    {id: 2, label: "How to use the Caro-Kann"},
+    {id: 3, label: "How to play the King's Indian, Gligoric System, Exchange Variation, Positional Line"},
+  ]
+
   return (
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle>Create project</CardTitle>
-        <CardDescription>Deploy your new project in one-click.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Name of your project" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Framework</Label>
-              <Select>
-                <SelectTrigger id="framework">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="next">Next.js</SelectItem>
-                  <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem value="astro">Astro</SelectItem>
-                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </form>
-      </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
-        <Button>Deploy</Button>
-      </CardFooter>
-    </Card>
+    <>
+      <header className="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-4 md:border-b shrink-0">
+        <div className="flex items-center gap-4">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon">
+                <ViewVerticalIcon className="h-4 w-4" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="inset-y-0 flex h-auto w-[600px] flex-col p-10">
+              <SheetHeader className="flex">
+                <SheetTitle>Chat History</SheetTitle>
+                <SheetDescription>
+                  Jump back into your previous conversations
+                </SheetDescription>
+              </SheetHeader>
+              <div className="flex flex-col flex-grow">
+              
+                {chatHistory.map((chat) => (
+                  <Button key={chat.id} className="px-2" variant="ghost">
+                    
+                    <p className="w-full text-left truncate">{chat.label}</p>
+                  </Button>
+                ))}
+              </div>
+              <SheetFooter className="flex">
+                <SheetClose asChild>
+                  <Button type="submit">Clear history</Button>
+                </SheetClose>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
+          
+          <h1 className="hidden md:flex">Paxton Frontend Test</h1>
+        </div>
+
+        <div className="hidden md:flex items-center gap-4">
+          <Button variant="outline">Edit Context</Button>
+        </div>
+      </header>
+      <main className="flex-1 p-4 mx-auto max-w-7xl border">
+        <h2 className="text-2xl font-bold">Main Content</h2>
+      </main>
+    </>
   )
 }
 
