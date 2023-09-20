@@ -25,7 +25,7 @@ const initialState: ChatState = {
       sender: "bot",
     },
   ],
-  status: "clean",
+  status: "idle",
 };
 
 export const chatsSlice = createSlice({

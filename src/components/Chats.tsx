@@ -20,9 +20,9 @@ function Chats() {
               }`}
             >
               {message.sender === "user" ? (
-                <PersonIcon />
+                <PersonIcon className="text-slate-900" />
               ) : (
-                <LightningBoltIcon />
+                <LightningBoltIcon className="text-slate-900" />
               )}
             </AvatarFallback>
           </Avatar>
@@ -33,7 +33,7 @@ function Chats() {
         <Card key={-1} className="flex w-full items-center p-3">
           <Avatar className="h-12 w-12 mr-2">
             <AvatarFallback className="bg-lime-100">
-              <LightningBoltIcon />
+              <LightningBoltIcon className="text-slate-900" />
             </AvatarFallback>
           </Avatar>
           <div className="space-y-2">

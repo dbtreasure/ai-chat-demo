@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ViewVerticalIcon } from "@radix-ui/react-icons";
+import { ViewVerticalIcon, SunIcon, MoonIcon } from "@radix-ui/react-icons";
+import { useTheme } from "@/lib/themeProvider";
 import {
   Sheet,
   SheetClose,
@@ -12,6 +13,7 @@ import {
 } from "@/components/ui/sheet";
 
 function Header() {
+  const { setTheme } = useTheme();
   const chatHistory = [
     { id: 1, label: "How to use the app" },
     { id: 2, label: "How to use the Caro-Kann" },
@@ -49,13 +51,22 @@ function Header() {
               ))}
             </div>
             <SheetFooter className="flex">
-              <SheetClose asChild>
-                <Button type="submit">Clear history</Button>
-              </SheetClose>
+              <Button variant="secondary">
+                <SunIcon
+                  className="h-4 w-4"
+                  onClick={() => setTheme("light")}
+                />
+              </Button>
+              <Button>
+                <MoonIcon
+                  className="h-4 w-4"
+                  onClick={() => setTheme("dark")}
+                />
+              </Button>
+              <Button variant="destructive">Clear history</Button>
             </SheetFooter>
           </SheetContent>
         </Sheet>
-
         <h1 className="hidden md:flex">Paxton Frontend Test</h1>
       </div>
 

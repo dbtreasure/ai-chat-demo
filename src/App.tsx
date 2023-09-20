@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-1 flex-col">
       <Header />
-      <main className="flex flex-1 flex-col items-center  bg-gray-100">
+      <main className="flex flex-1 flex-col items-center bg-secondary">
         <div className="flex flex-1 flex-col items-center justify-between p-4 w-9/10 md:w-3/4 lg:w-2/3 ">
           {status === "clean" ? <Intro /> : <Chats />}
           <MessageEntry />
