@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import { Provider } from "react-redux"
 import { store } from "./app/store"
+import './App.css'
 import './index.css'
 import '@radix-ui/themes/styles.css';
 
