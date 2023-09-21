@@ -3,7 +3,6 @@ import { ViewVerticalIcon, SunIcon, MoonIcon } from "@radix-ui/react-icons";
 import { useTheme } from "@/lib/themeProvider";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
   SheetFooter,
