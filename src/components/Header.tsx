@@ -40,7 +40,7 @@ function Header() {
             <SheetHeader className="flex">
               <SheetTitle>Chat History</SheetTitle>
               <SheetDescription>
-                Jump back into your previous conversations
+                Jump back into your previous conversations (not implemented)
               </SheetDescription>
             </SheetHeader>
             <div className="flex flex-col flex-grow">
@@ -57,7 +57,9 @@ function Header() {
               <Button onClick={() => setTheme("dark")}>
                 <MoonIcon className="h-4 w-4" />
               </Button>
-              <Button variant="destructive">Clear history</Button>
+              <Button variant="destructive">
+                Clear history (not implemented)
+              </Button>
             </SheetFooter>
           </SheetContent>
         </Sheet>

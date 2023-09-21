@@ -2,7 +2,6 @@ import { useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import { PaperPlaneIcon } from "@radix-ui/react-icons";
 import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useAppDispatch } from "@/app/hooks";
 import {
