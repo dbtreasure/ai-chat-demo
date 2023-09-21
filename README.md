@@ -11,4 +11,10 @@ Copy the .env.example file to .env and fill in the values. This is a demo app an
 
 ## Testing
 
+### Unit tests
+
 `pnpm run test`
+
+### E2E tests
+
+`pnpm run test:e2e`
