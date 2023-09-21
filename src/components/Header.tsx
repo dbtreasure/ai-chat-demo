@@ -51,17 +51,11 @@ function Header() {
               ))}
             </div>
             <SheetFooter className="flex">
-              <Button variant="secondary">
-                <SunIcon
-                  className="h-4 w-4"
-                  onClick={() => setTheme("light")}
-                />
+              <Button variant="secondary" onClick={() => setTheme("light")}>
+                <SunIcon className="h-4 w-4" />
               </Button>
-              <Button>
-                <MoonIcon
-                  className="h-4 w-4"
-                  onClick={() => setTheme("dark")}
-                />
+              <Button onClick={() => setTheme("dark")}>
+                <MoonIcon className="h-4 w-4" />
               </Button>
               <Button variant="destructive">Clear history</Button>
             </SheetFooter>

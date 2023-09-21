@@ -12,10 +12,14 @@ function App() {
     <div className="min-h-screen flex flex-1 flex-col">
       <Header />
       <main className="flex flex-1 flex-col items-center bg-secondary">
-        <div className="flex flex-1 flex-col items-center justify-between p-4 w-9/10 md:w-3/4 lg:w-2/3 ">
+        <div
+          id="chat-container"
+          className="flex flex-1 flex-col items-center mt-4 justify-between md:w-3/4 lg:w-2/3 overflow-y-auto"
+          style={{ maxHeight: "calc(100vh - 180px)" }}
+        >
           {status === "clean" ? <Intro /> : <Chats />}
-          <MessageEntry />
         </div>
+        <MessageEntry />
       </main>
     </div>
   );
