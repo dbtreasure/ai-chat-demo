@@ -25,6 +25,12 @@ function MessageEntry() {
     role: "user",
   };
 
+  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onMessageSubmit();
+    }
+  };
+
   const onMessageSubmit = async () => {
     setMessage("");
     dispatch(addMessage(bundledMessage));
@@ -33,18 +39,19 @@ function MessageEntry() {
   };
 
   return (
-    <Card className="flex flex-col w-full md:w-3/4 lg:w-2/3 p-4 fixed bottom-0">
+    <div className="flex flex-col w-full md:w-3/4 lg:w-2/3 p-4 fixed bottom-0 bg-card  rounded-lg drop-shadow-md">
       <div className="flex items-center space-x-2">
         <Input
           value={message}
           onChange={onInputChange}
+          onKeyDown={onKeyDown}
           placeholder="How do I control the center in opening play?"
         />
         <Button onClick={onMessageSubmit}>
           <PaperPlaneIcon className="h-4 w-4" />
         </Button>
       </div>
-    </Card>
+    </div>
   );
 }
 
