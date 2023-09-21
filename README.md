@@ -6,15 +6,15 @@ Create an .env file at the project root and place a `VITE_OPENAI_API_KEY="YOUR A
 
 ## Installation
 
-`pnpm install`
-`pnpm run dev`
+`npm install`
+`npm run dev`
 
 ## Testing
 
 ### Unit tests
 
-`pnpm run test`
+`npm run test`
 
 ### E2E tests
 
-`pnpm run test:e2e`
+`npm run test:e2e`
