@@ -7,7 +7,7 @@ import {
 import { RootState } from "@/app/store";
 import OpenAI from "openai";
 
-const openaiAPIKey = import.meta.env.VITE_OPENAI_API_KEY as string;
+const openaiAPIKey = process.env.VITE_OPENAI_API_KEY as string;
 const openai = new OpenAI({
   apiKey: openaiAPIKey,
   dangerouslyAllowBrowser: true,
@@ -19,7 +19,7 @@ export interface ChatMessage {
   role: "user" | "system" | "assistant";
 }
 
-interface ChatState {
+export interface ChatState {
   messages: ChatMessage[];
   status: "clean" | "loading" | "idle" | "failed";
 }
